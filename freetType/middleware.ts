@@ -8,7 +8,7 @@ import FreetTypeCollection from '../freetType/collection';
  * when a user tries to modify an account in some browser while it has been deleted in another
  */
 const isValidFreetTypeLabel = async (req: Request, res: Response, next: NextFunction) => {
-  const freetTypeRegex = /^\w+$/i; // /^[a-z]+$/i;
+  const freetTypeRegex = /^[a-z]+$/i;
   if (!freetTypeRegex.test(req.body.freetTypeLabel)) {
     res.status(400).json({
       error: {
