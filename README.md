@@ -392,7 +392,7 @@ This renders the `index.html` file that will be used to interact with the backen
 - `413` If the full story is more than 1000 words long
 
 
-### `POST /api/freetLike/:freetId? - Likes a Freet
+### `POST /api/freetLike/:freetId?` - Likes a Freet
 
 
 **Returns**
@@ -407,7 +407,7 @@ This renders the `index.html` file that will be used to interact with the backen
 - `412` if the user has already liked the freet
 
 
-### `DELETE /api/freetLike/:freetId? - Remove like of a Freet
+### `DELETE /api/freetLike/:freetId?` - Remove like of a Freet
 
 **Returns**
 
@@ -436,7 +436,7 @@ This renders the `index.html` file that will be used to interact with the backen
 - An array of all accounts user is following
 
 
-### `POST /api/profile/:username? - Follow user
+### `POST /api/profile/:username?` - Follow user
 
 
 **Returns**
@@ -449,7 +449,7 @@ This renders the `index.html` file that will be used to interact with the backen
 - `404` if the username is invalid
 - `412` if the user already follows user
 
-### `DELETE /api/profile/:username? - Unfollow user
+### `DELETE /api/profile/:username?` - Unfollow user
 
 
 **Returns**
