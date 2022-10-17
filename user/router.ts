@@ -30,7 +30,6 @@ router.post(
     userValidator.isAccountExists
   ],
   async (req: Request, res: Response) => {
-    console.log("hi your sign in made it to router");
     const user = await UserCollection.findOneByUsernameAndPassword(
       req.body.username, req.body.password
     );

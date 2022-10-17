@@ -26,9 +26,9 @@ router.post(
     freetTypeValidator.isValidFreetTypeLabel
   ],
   async (req: Request, res: Response) => {
-    console.log('hi: freet type router');
-    const freetType = await FreetTypeCollection.addOne(req.body.freetTypeLabel);
-    //todo make a function (either in collection or middleware that tells you if freet type already exists)
+    const userId = (req.session.userId as string) ?? ''; // Will not be an empty string since its validated in isUserLoggedIn
+    const freetType = await FreetTypeCollection.addOne(userId, req.body.freetTypeLabel);
+    // Todo make a function (either in collection or middleware that tells you if freet type already exists)
     // req.session.userId = user._id.toString();
     res.status(201).json({
       message: `Your successfully created a freet type: ${freetType.freetTypeLabel}`,

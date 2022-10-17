@@ -15,10 +15,13 @@ class FreetTypeCollection {
    * @param {string} freetTypeLabel - The Freet Type (label)
    * @return {Promise<HydratedDocument<FreetType>>} - The newly created Freet Type
    */
-  static async addOne(freetTypeLabel: string): Promise<HydratedDocument<FreetType>> {
-    const freetType = new FreetTypeModel({freetTypeLabel});
+  static async addOne(authorId: Types.ObjectId | string, freetTypeLabel: string): Promise<HydratedDocument<FreetType>> {
+    const freetType = new FreetTypeModel({
+      authorId,
+      freetTypeLabel
+    });
     await freetType.save(); // Saves user to MongoDB
-    return freetType;
+    return freetType.populate('authorID');
   }
 }
 
