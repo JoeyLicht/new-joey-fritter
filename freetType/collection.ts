@@ -10,10 +10,10 @@ import FreetTypeModel from './model';
  */
 class FreetTypeCollection {
   /**
-   * Add a new user
+   * Add a new Freet Type
    *
    * @param {string} freetTypeLabel - The Freet Type (label)
-   * @return {Promise<HydratedDocument<User>>} - The newly created Freet Type
+   * @return {Promise<HydratedDocument<FreetType>>} - The newly created Freet Type
    */
   static async addOne(freetTypeLabel: string): Promise<HydratedDocument<FreetType>> {
     const freetType = new FreetTypeModel({freetTypeLabel});
@@ -23,4 +23,3 @@ class FreetTypeCollection {
 }
 
 export default FreetTypeCollection;
-

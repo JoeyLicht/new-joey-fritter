@@ -22,12 +22,12 @@ const router = express.Router();
  */
 router.post(
   '/',
-  // [
-  //   freetTypeValidator.isValidFreetTypeLabel
-  // ],
+  [
+    freetTypeValidator.isValidFreetTypeLabel
+  ],
   async (req: Request, res: Response) => {
     console.log('hi: freet type router');
-    const freetType = await FreetTypeCollection.addOne(req.body.freetType);
+    const freetType = await FreetTypeCollection.addOne(req.body.freetTypeLabel);
     //todo make a function (either in collection or middleware that tells you if freet type already exists)
     // req.session.userId = user._id.toString();
     res.status(201).json({

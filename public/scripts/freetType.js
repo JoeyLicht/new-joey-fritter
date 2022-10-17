@@ -11,3 +11,4 @@ function createFreetType(fields) {
     .then(showResponse)
     .catch(showResponse);
 }
+
